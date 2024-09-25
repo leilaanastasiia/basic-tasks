@@ -1,6 +1,6 @@
-from apps import perfect_weight, triangle_area
+from apps import perfect_weight, triangle_area, fibonacci_numbers
 
-options: list = ['perfect_weight', 'triangle_area']
+options: list = ['perfect_weight', 'triangle_area', 'fibonacci_numbers']
 
 def main():
     print('Available apps:', *options, sep='\n')
@@ -17,6 +17,8 @@ def main():
             perfect_weight.main()
         elif user_input == 'triangle_area':
             triangle_area.main()
+        elif user_input == 'fibonacci_numbers':
+            fibonacci_numbers.main()
     else:
         print("Wrong input")
 
