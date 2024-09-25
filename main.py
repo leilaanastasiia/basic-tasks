@@ -1,6 +1,6 @@
-from apps import perfect_weight, triangle_area
+from apps import perfect_weight, triangle_area, dates_number
 
-options: list = ['perfect_weight', 'triangle_area']
+options: list = ['perfect_weight', 'triangle_area', 'dates_number']
 
 def main():
     print('Available apps:', *options, sep='\n')
@@ -17,6 +17,8 @@ def main():
             perfect_weight.main()
         elif user_input == 'triangle_area':
             triangle_area.main()
+        elif user_input == 'dates_number':
+            dates_number.main()
     else:
         print("Wrong input")
 
