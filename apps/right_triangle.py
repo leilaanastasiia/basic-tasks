@@ -23,17 +23,20 @@ def is_isosceles_triangle(a, b, c):
 
 def main() -> None:
     parsed = get_parameters()
-    a, b, c = parsed[0], parsed[1], parsed[2]
-    if is_equilateral_triangle(a, b, c):
-        print('This is an equilateral triangle.')
-    elif is_right_triangle(a, b, c):
-        print('This is a right triangle.')
-        if is_isosceles_triangle(a, b, c):
-            print('And an isosceles triangle as well.')
-    elif is_isosceles_triangle(a, b, c):
-        print('This is an isosceles triangle.')
+    if len(parsed) == 3:
+        a, b, c = parsed[0], parsed[1], parsed[2]
+        if is_equilateral_triangle(a, b, c):
+            print('This is an equilateral triangle.')
+        elif is_right_triangle(a, b, c):
+            print('This is a right triangle.')
+            if is_isosceles_triangle(a, b, c):
+                print('And an isosceles triangle as well.')
+        elif is_isosceles_triangle(a, b, c):
+            print('This is an isosceles triangle.')
+        else:
+            print("This is not a right triangle.")
     else:
-        print("This is not a right triangle.")
+        print("Not enough values were given.")
 
 if __name__ == '__main__':
     main()
