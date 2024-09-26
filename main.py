@@ -10,6 +10,7 @@ from apps import (
     # fibonacci_numbers,
     # vowels
 )
+
 def main():
     apps = {
         'perfect_weight': perfect_weight.main,
@@ -32,4 +33,5 @@ def main():
         print("Wrong input")
 
 if __name__ == '__main__':
-    main()
+    while True:
+        main()
