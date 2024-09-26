@@ -1,6 +1,5 @@
 def main():
-    user_name: str = input('Please, enter your name: ')
-    user_height: str = input('Now enter your height in cm (ex. 165): ')
+    user_name, user_height = input('Please, enter your name and height: (ex. Mark 179)').split()
     ideal_weight = int(user_height) - 110
     if ideal_weight >= 0:
         print(f'{user_name}, your perfect weight is {ideal_weight} kg.')
