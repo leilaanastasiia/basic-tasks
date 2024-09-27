@@ -1,26 +1,37 @@
-from apps import perfect_weight, triangle_area, shopping_cart
-
-options: list = ['perfect_weight', 'triangle_area', 'shopping_cart']
+from apps import (
+    perfect_weight,
+    triangle_area,
+    right_triangle,
+    quadratic_equation,
+    shopping_cart,
+    # dates_number,
+    # months_30_days,
+    # array_to_100,
+    # fibonacci_numbers,
+    # vowels
+)
 
 def main():
-    print('Available apps:', *options, sep='\n')
+    apps = {
+        'perfect_weight': perfect_weight.main,
+        'triangle_area': triangle_area.main,
+        'right_triangle': right_triangle.main,
+        'quadratic_equation': quadratic_equation.main,
+        'shopping_cart': shopping_cart.main,
+        # 'dates_number': dates_number.main,
+        # 'months_30_days.py': months_30_days.main,
+        # 'array_to_100': array_to_100.main,
+        # 'fibonacci_numbers': fibonacci_numbers.main,
+        # 'vowels': vowels.main
+    }
+    print('Available apps:', *apps.keys(), sep='\n')
     user_input: input = input('Please, enter an app name to run: ')
 
-    """
-    I was thinking about a better way to choose an app, not an explicit manual one. 
-    But I haven't found something useful. 
-    Maybe you have any ideas? 
-    """
-
-    if user_input in options:
-        if user_input == 'perfect_weight':
-            perfect_weight.main()
-        elif user_input == 'triangle_area':
-            triangle_area.main()
-        elif user_input == 'shopping_cart':
-            shopping_cart.main()
+    if user_input in apps:
+        apps[user_input]()
     else:
         print("Wrong input")
 
 if __name__ == '__main__':
-    main()
+    while True:
+        main()
