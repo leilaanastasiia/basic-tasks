@@ -17,8 +17,8 @@ def one_root(a, b) -> int:
     return root
 
 def two_roots(a, b, d) -> dict[str, int]:
-    root1 = round((-b + sqrt(d)) / (2 * a), 1)
-    root2 = round((-b - sqrt(d)) / (2 * a), 1)
+    root1 = (-b + sqrt(d)) / (2 * a)
+    root2 = (-b - sqrt(d)) / (2 * a)
     return {
         'root1': root1,
         'root2': root2,
@@ -39,7 +39,7 @@ def main() -> None:
                 print(f'The discriminant equals to {d}. The root is {root}.')
             if d > 0:
                 root1, root2 = two_roots(a, b, d).values()
-                print(f'The discriminant equals to {d}. The root is {root1} and {root2}.')
+                print(f'The discriminant equals to {d}. The root is {root1:.1f} and {root2:.1f}.')
     else:
         print('Please enter 3 numbers.')
 
